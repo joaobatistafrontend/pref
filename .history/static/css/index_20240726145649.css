@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: chocolate;
+    /* background: linear-gradient(transparent, #213444); */
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+nav{
+    background-color: #fff;
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;   
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li{
+    height: 50px;
+}
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-self: center;
+    color: #000;
+}
+nav a:hover{
+    background-color: red;
+}
+nav li:fir

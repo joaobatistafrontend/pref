@@ -1,0 +1,7 @@
+nav{
+    height: 6rem;
+    font-weight: 700;
+}
+.navbar-toggler.clicked {
+    background-color: #f8f9fa; /* Cor de fundo quando clicado */
+}

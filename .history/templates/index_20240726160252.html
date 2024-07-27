@@ -1,0 +1,40 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}"></head>
+<body>
+        <nav>
+            <ul>
+                <li class="desktopMenu"><a href="">Principal</a></li>
+                <li class="desktopMenu"><a href="">Sobre</a></li>
+                <li class="desktopMenu"><a href="">Ia das Meninas</a></li>
+                <li class="desktopMenu"><a href="">Grupo das Meninas</a></li>
+                <li class="desktopMenu"><a href="">Login</a></li>
+                <li><a href="">Cadastra</a></li>
+                <li class="menu-button" onclick="showSidebar()"><a><img src="{% static 'img/burger-menu-svgrepo-com.svg' %}" alt=""></a></li>
+            </ul>
+            <ul class="sidebar">
+                <li onclick="showSidebar()"><a href=""><img src="{% static 'img/x-symbol-svgrepo-com.svg' %}" alt=""></a></li>
+                <li><a href="">Principal</a></li>
+                <li><a href="">Sobre</a></li>
+                <li><a href="">Ia das Meninas</a></li>
+                <li><a href="">Grupo das Meninas</a></li>
+                <li><a href="">Login</a></li>
+                <li><a href="">Cadastra</a></li>
+            </ul>
+            
+
+        </nav>
+        <script>
+            function showSidebar(){
+                document.querySelector('.sidebar').style.display='flex';
+            }
+        </script>
+</body>
+</html>

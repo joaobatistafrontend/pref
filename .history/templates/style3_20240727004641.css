@@ -1,0 +1,31 @@
+nav{
+    height: 5rem;
+    font-weight: 700;
+    
+}
+.navbar-toggler {
+    background-color: transparent; /* Estilo padrão */
+    border: none;
+}
+
+.navbar-toggler.clicked {
+    background-color: #f8f9fa; /* Cor de fundo quando clicado */
+}
+
+.navbar-toggler.clicked .navbar-toggler-icon {
+    background-image: url('path/to/your/cross-icon.png'); /* Ícone da cruz */
+}
+.hero-img{
+    width: 90%;
+}
+.how-it-works-text{
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.4;
+}
+.icon{
+    width: 1.4rem;
+    height: 1.4rem;
+    padding: 1rem;
+    background-color: #02;
+}
