@@ -1,10 +1,19 @@
 #https://espere.in/Build-your-chatbot-with-the-power-of-Gemini-API-using-Django/
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from .models import ChatBot
 from django.http import HttpResponseRedirect, JsonResponse
 import google.generativeai as genai
 from .treinamentos import contexto_inicial, contexto_de_estudos
+
+from django.urls import reverse_lazy
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView,CreateView,View,ListView,UpdateView,DeleteView
+from .forms import CustomUserCreationForm
+
 #chave api
 genai.configure(api_key="AIzaSyCkg2khwEkqTQ7kYa8gVzsz2bWWpweUEO8")
 
@@ -41,4 +50,17 @@ def chat(request):
 
 def index(request):
     
-    return render(request, "index3.html")
+    return render(request, "index.html")
+
+
+class Cadastro(View):
+    def get(self, request):
+        form = CustomUserCreationForm()
+        return render(request, 'registration/cadastro.html',{'form':form})
+    
+    def post(self, request):
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+        return render(request, 'registration/cadastro.html', {'form': form})

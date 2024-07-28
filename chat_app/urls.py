@@ -1,10 +1,12 @@
 
 from django.contrib import admin
 from django.urls import path, include
-from . import views
+from .views import *
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", index, name="index"),
     path("accounts/", include("django.contrib.auth.urls")),
-    path("ask_question/", views.ask_question, name="ask_question"),
+    path("ask_question/", ask_question, name="ask_question"),
+
+    path('cadastro', Cadastro.as_view(), name="cadastro")
 ]
