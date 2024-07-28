@@ -41,4 +41,4 @@ def chat(request):
 
 def index(request):
     
-    return render(request, "index2.html")
+    return render(request, "index3.html")
