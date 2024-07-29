@@ -1,0 +1,26 @@
+
+.chat-list{
+    padding: 0;
+    
+}
+.chat-list li{
+    margin-bottom: 10px;
+    overflow: auto;
+    color: black;
+}
+.chat-list .chat-img{
+    float: left;
+    width: 48px;
+}
+.chat-list .chat-img img{   
+    border-radius: 50%;
+    width: 100%;
+}
+.chat-list .cha-message{
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    background-color: blue;
+    padding: 10px 20px;
+}
+.chat-list .c

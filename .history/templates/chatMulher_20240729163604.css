@@ -1,0 +1,19 @@
+
+.chat-list{
+    padding: 0;
+    font-size: 8.rem;
+}
+.chat-list li{
+    margin-bottom: 10px;
+    overflow: auto;
+    color: black;
+}
+.chat-list .chat-img{
+    float: left;
+    width: 48px;
+}
+.chat-list .chat-img img{   
+    border-radius: 50%;
+    width: 100%;
+}
+.chat-img

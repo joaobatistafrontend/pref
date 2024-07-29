@@ -1,0 +1,23 @@
+body{
+    background-color:rgb(101, 98, 98);
+}
+.chat-list{
+    padding: 0;
+    font-size: 8.rem;
+}
+.chat-list li{
+    margin-bottom: 10px;
+    overflow: auto;
+    color: black;
+}
+.chat-list .chat-img{
+    float: left;
+    width: 48px;
+}
+.chat-list .chat-img img{
+    background-color: #5a99ee;
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    border-radius: 50%;
+}
