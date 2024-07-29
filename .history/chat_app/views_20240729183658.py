@@ -71,14 +71,14 @@ class ChatRedirectView(View):
 class ChatRoomView(TemplateView):
     def get(self, request, room_name):
         room = get_object_or_404(SalaMeninas, name=room_name)
-        messages = room.message_set.all().order_by('timestamp')#na ordem das mensagens mais antigas aparecem primeiro.
+        messages = room.message_set.all().order_by('timestamp')#na ordem de As mensagens mais antigas aparecem primeiro.
         return render(request, 'chat_meninas.html', {'room': room, 'messages': messages})
 
     def post(self, request, room_name):
         room = get_object_or_404(SalaMeninas, name=room_name)
         content = request.POST.get('message', '').strip()
 
-        if content:  # Verifica se a mensagem não está vazia ou composta apenas de espaços em branco.
+        if content:  # Verifica se a mensagem não está vazia ou composta apenas de espaços em branco
             message = Message(user=request.user, chat_room=room, content=content)
             message.save()
         
@@ -98,3 +98,16 @@ class Cadastro(View):
         return render(request, 'registration/cadastro.html', {'form': form})
     
 
+@login_required
+def chat_room(request, room_name):
+    room = get_object_or_404(SalaMeninas, name=room_name)
+    messages = room.message_set.all().order_by('timestamp')
+    return render(request, 'chat_meninas.html', {'room': room, 'messages': messages})
+
+@login_required
+def send_message(request, room_name):
+    if request.method == 'POST':
+        room = get_object_or_404(SalaMeninas, name=room_name)
+        message = Message(user=request.user, chat_room=room, content=request.POST['message'])
+        message.save()
+    return redirect('chat_room', room_name=room_name)
